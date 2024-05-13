@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import sequelize from './src/infra/db/config';
+import { produtoRoute } from './src/routes/produtos.routes'
 const test = async() => {
     try {
         await sequelize.authenticate();
@@ -11,6 +12,8 @@ const test = async() => {
 
 test();
 const app = express();
+
+produtoRoute(app)
 const PORT = 3000;
 
 app.listen(PORT, () => {
