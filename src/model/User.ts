@@ -28,19 +28,14 @@ const Produto = sequelize.define('produtos',{
         },
         data_cadastro: {
             type: DataTypes.DATE,
-            defaultValue: new Date()
-        },
-        createdAt:{
-            type: DataTypes.DATE,
             defaultValue: new Date(),
-            field: 'createdat'
-        },
-        updatedAt:{
-            type: DataTypes.DATE,
-            defaultValue: new Date(),
-            field: 'updatedat'
+
         }
     
+}, {
+    createdAt: 'data_cadastro',
+    timestamps: true,
+    updatedAt: false
 });
 
 
