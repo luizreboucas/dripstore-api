@@ -18,7 +18,8 @@
     "reflect-metadata": "^0.2.2",
     "sequelize": "^6.37.3",
     "sequelize-typescript": "^2.1.6",
-    "ts-dotenv": "^0.9.1"
+    "ts-dotenv": "^0.9.1",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.6",

@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import sequelize from './src/infra/db/config';
 import { produtoRoute } from './src/routes/produtos.routes'
+
 const test = async() => {
     try {
         await sequelize.authenticate();
@@ -14,7 +15,7 @@ test();
 const app = express();
 app.use(express.json())
 produtoRoute(app)
-const PORT = 3000;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
     console.log("server running in port " + PORT);
