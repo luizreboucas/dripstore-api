@@ -5,6 +5,8 @@ export const produtoRoute = (app: Express) => {
     var route = express.Router()
 
     route.get('/', ProdutosService.getAll)
-
+    route.post('/',ProdutosService.create)
+    route.get('/:id',ProdutosService.findOne)
+    route.delete('/:id', ProdutosService.delete)
     app.use('/api/produto', route)
 }

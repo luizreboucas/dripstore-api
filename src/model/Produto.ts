@@ -5,7 +5,8 @@ import sequelize from '../infra/db/config';
 const Produto = sequelize.define('produtos',{
     
         id:{
-            type: DataTypes.UUIDV4,
+            type: DataTypes.NUMBER,
+            autoIncrement: true,
             primaryKey: true,
             allowNull: false
         },

@@ -12,7 +12,7 @@ const test = async() => {
 
 test();
 const app = express();
-
+app.use(express.json())
 produtoRoute(app)
 const PORT = 3000;
 
