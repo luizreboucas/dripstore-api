@@ -56,4 +56,21 @@ export default class ProdutosService{
         }
     }
 
+    static update = async(req: Request, res: Response) => {
+        try {
+            const { id } = req.params;
+            const { data_cadastro, ativo, descricao, desconto, preco ,categoria} = req.body
+            if(data_cadastro) await Produto.update({data_cadastro}, { where: {id}})
+            if(ativo != undefined) await Produto.update({ativo}, { where: {id}})
+            if(descricao) await Produto.update({descricao}, { where: {id}})
+            if(desconto) await Produto.update({desconto}, { where: {id}})
+            if(preco) await Produto.update({preco}, { where: {id}})
+            if(categoria) await Produto.update({categoria}, { where: {id}})
+            const produto = await Produto.findByPk(id);
+            return res.status(201).json({produto});
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
