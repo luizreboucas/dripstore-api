@@ -2,7 +2,7 @@ import { Request, Response } from "express"
 import db from "../model";
 const Perfil = db.perfil;
 
-export default class UserService{
+export default class PerfilService{
     
     static getAll = async(req: Request, res: Response) => {
         try {

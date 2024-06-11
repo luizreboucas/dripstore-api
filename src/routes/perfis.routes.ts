@@ -1,13 +1,13 @@
 import express, {Express} from 'express'
-import UserService from "../services/users.service"
+import PerfilService from '../services/perfis.service';
 
 
 var router = express.Router()
 
-    .get('/', UserService.getAll)
-    .post('/',UserService.create)
-    .get('/:id',UserService.findOne)
-    .put('/:id', UserService.update)
-    .delete('/:id', UserService.delete)
+    .get('/', PerfilService.getAll)
+    .post('/',PerfilService.create)
+    .get('/:id',PerfilService.findOne)
+    .put('/:id', PerfilService.update)
+    .delete('/:id', PerfilService.delete)
 
 export default router;
