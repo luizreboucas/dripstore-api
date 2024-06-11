@@ -1,5 +1,7 @@
 import { Request, Response } from "express"
-import Produto from "../model/Produto"
+import db from "../model";
+
+const Produto = db.produto;
 
 export default class ProdutosService{
     
