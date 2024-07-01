@@ -1,6 +1,9 @@
 import { Request, Response } from "express"
 import db from "../model";
+import { generateHash } from "../helpers/criptografia";
 const User = db.user;
+
+
 
 export default class UserService{
     
@@ -18,10 +21,11 @@ export default class UserService{
         try {
             const { nome, email, senha }= req.body
             const data_cadastro = new Date();
+            const hash = generateHash(senha);
             const user = {
                 nome,
                 email,
-                senha,
+                senha: hash,
                 data_cadastro
             }
             const result = await User.create(user);
