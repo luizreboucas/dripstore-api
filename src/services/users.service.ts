@@ -19,7 +19,7 @@ export default class UserService{
 
     static create = async(req: Request, res: Response) => {
         try {
-            const { nome, email, senha }= req.body
+            const { nome, email, senha, perfil }= req.body
             const data_cadastro = new Date();
             const hash = generateHash(senha);
             const user = {
@@ -29,6 +29,7 @@ export default class UserService{
                 data_cadastro
             }
             const result = await User.create(user);
+            
             return res.json(result);
         } catch (error) {
             console.log(error)

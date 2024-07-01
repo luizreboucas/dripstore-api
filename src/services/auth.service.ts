@@ -3,8 +3,8 @@ import db from "../model";
 import { compareHash } from "../helpers/criptografia";
 import jwt from 'jsonwebtoken';
 import { load } from 'ts-dotenv'
+import { secret } from "../infra/db/config";
 const User = db.user;
-const secret= '@$*(@#*$%UI$F34';
 
 export class AuthService{
 

@@ -5,4 +5,7 @@ const sequelize = new Sequelize('dripstore_db', 'postgres', 'postgres', {
     dialect: 'postgres'
   });
 
+
+export const secret = '@$*(@#*$%UI$F34';
+
 export default sequelize;

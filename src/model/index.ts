@@ -14,5 +14,12 @@ const db : DbSingleton= {
     perfil: Perfil
 };
 
+db.perfil.belongsToMany(db.user, {
+    through: "usuario_perfil"
+  });
+  db.user.belongsToMany(db.perfil, {
+    through: "usuario_perfil"
+  });
+
 
 export default db;
